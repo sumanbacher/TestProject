@@ -20,7 +20,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private Button mBtn_submit;
     CheckBox mCheckbox;
     SharedPreferences mSharedPreferences;
-    private Button btnNewOne;
+    private Button btnNewOneTwo;
 
 
     private String mStr_username, mStr_password;
