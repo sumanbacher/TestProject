@@ -19,7 +19,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private EditText mEt_username, mEt_password;
     private Button mBtn_submit;
     CheckBox mCheckbox;
-    SharedPreferences sharedPreferences;
+    SharedPreferences mSharedPreferences;
 
     private String mStr_username, mStr_password;
 
@@ -33,13 +33,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         mCheckbox = findViewById(R.id.check_activity_login);
         mBtn_submit.setOnClickListener(this);
 
-        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        mSharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
 
         mCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    SharedPreferences.Editor editor = mSharedPreferences.edit();
                     editor.putString("NAME", mEt_username.getText().toString().trim());
                     editor.putString("PASSWORD", mEt_password.getText().toString().trim());
                     editor.commit();
